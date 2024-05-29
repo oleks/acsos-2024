@@ -81,10 +81,14 @@ adaptive, multi-agent, distributed, programming
 % the community - including limitations of current approaches.
 
 Contemporary distributed systems communication primitives tend to deal
-in short-term planning horizons. That is, a response from an agent is
-only relevant for a short period of time after the response is
-composed---follow-up requests will be relevant only for an even
-shorter period of time (if any), when they arrive back at the agent.
+in short-term planning horizons. In highly dynamic systems, a response
+from an agent may be relevant only for a short period of time after
+the response is composed---follow-up requests will be relevant only
+for an even shorter period of time (if any), when they arrive back at
+the agent.  At the same time, agents in highly dynamic systems often
+cannot freeze in anticipation of follow-up requests.
+
+In attempt to reconcile this shortcoming, responses may come with indications on how the state of an agent may evolve in the slightly longer term,
 
 \section{Contribution and Objectives}
 
