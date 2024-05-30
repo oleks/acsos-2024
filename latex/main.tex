@@ -81,14 +81,29 @@ adaptive, multi-agent, distributed, programming
 % the community - including limitations of current approaches.
 
 Contemporary distributed systems communication primitives tend to deal
-in short-term planning horizons. In highly dynamic systems, a response
-from an agent may be relevant only for a short period of time after
-the response is composed---follow-up requests will be relevant only
-for an even shorter period of time (if any), when they arrive back at
-the agent.  At the same time, agents in highly dynamic systems often
-cannot freeze in anticipation of follow-up requests.
+in short-term planning horizons. However, in highly dynamic systems, a
+response from an agent may be relevant only for a short period of time
+after the response is composed. Hence, follow-up requests will be
+relevant for even shorter periods of time, if at all, when they
+round-trip back to the agent.
 
-In attempt to reconcile this shortcoming, responses may come with indications on how the state of an agent may evolve in the slightly longer term,
+At the same time, agents in highly dynamic systems often cannot freeze
+in anticipation of follow-up requests. Instead, we need to expand the
+relevance horizon. This may entail: (1) constructing responses such
+that they give an indication of not just the current state of an
+agent, but also its possible future states, and/or (2) composing
+follow-up requests such that they can be serviced successfully,
+despite possible change of state of the recipient.
+
+As a particular example, consider the following multi-agent problem: 3
+agents roam around in a two-dimensional fixed-size grid, looking for
+tasks to do. A task spawns at random, at a random position in the
+grid, and neither moves, nor disappears until two robots get within
+radius $\omega$ of the task and solve it.
+
+It seems safe to conjecture that an approach to communication that
+seeks to increase the expected success rate of follow-up requests
+would lead to less congested network traffic.
 
 \section{Contribution and Objectives}
 
