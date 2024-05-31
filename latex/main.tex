@@ -76,53 +76,74 @@ adaptive, multi-agent, distributed, programming
 
 \section{Motivation and Challenges}
 
-% explain why this research is important, and identify the key
-% research question(s) and challenges that have yet to be addressed by
-% the community - including limitations of current approaches.
+\emph{TASK: explain why this research is important, and identify the
+key research question(s) and challenges that have yet to be addressed
+by the community - including limitations of current approaches.}
 
 Contemporary distributed systems communication primitives tend to deal
-in short-term planning horizons. However, in highly dynamic systems, a
-response from an agent may be relevant only for a short period of time
-after the response is composed. Hence, follow-up requests will be
-relevant for even shorter periods of time, if at all, when they
-round-trip back to the agent.
+in short-term planning horizons. For instance, while an inquiry about
+the state of agent may resolve to a particular response, its state may
+be subject to fast-paced change, when compared with the time it takes
+to communicate across the network. This renders the response relevant
+only for a short period of time, if at all, when delivered. Follow-up
+requests will be relevant for an even shorter period of time.
 
-At the same time, agents in highly dynamic systems often cannot freeze
-in anticipation of follow-up requests. Instead, we need to expand the
-relevance horizon. This may entail: (1) constructing responses such
-that they give an indication of not just the current state of an
-agent, but also its possible future states, and/or (2) composing
-follow-up requests such that they can be serviced successfully,
-despite possible change of state of the recipient.
+Uncontested this leads to either high failure rates of follow-up
+requests, or highly congested networks. In particular, the state of a
+remote agent may be ill-predictable, while short-sighted status
+messages have little positive impact on the expected success-rate of
+follow-up messages. Hence, we may choose to flood the network in
+attempt to keep track of the fast-paced changes at a remote agent,
+while still gaining little confidence that we can act on those changes
+in due time.  
+
+% At the same time, agents in highly dynamic systems often cannot freeze
+% in anticipation of follow-up requests.
+
+Instead, we may try to expand the relevance horizon of our messages.
+This may entail: (1) constructing responses such that they give an
+indication of not just the current state of an agent, but also its
+possible future states, and/or (2) composing follow-up requests such
+that they can be serviced successfully, despite possible meanwhile
+state changes at the remote agent.
 
 As a particular example, consider the following multi-agent problem: 3
-agents roam around in a two-dimensional fixed-size grid, looking for
-tasks to do. A task spawns at random, at a random position in the
-grid, and neither moves, nor disappears until two robots get within
-radius $\omega$ of the task and solve it.
+robots roam a fixed-size room, looking for tasks to do. A task can be
+solved by at least 2 robots getting within radius $\omega$ of the
+task. Tasks appear at random, in random positions, and neither move,
+nor disappear until solved. Agents have an omnidirectional field of
+sight with radius $\omega$, and can communicate by broadcasting
+messages within radius $\beta$, where $\beta>\omega$.
 
-It seems safe to conjecture that an approach to communication that
-seeks to increase the expected success rate of follow-up requests
-would lead to less congested network traffic.
+% 2
+% vacuuming and 1 polishing robot roam a fixed-size room looking for
+% tasks to do---spots to vacuum and polish. A task spawns at a random
+% point in time, at a random position, and neither moves, nor disappears
+% until a vacuuming and polishing robot get within radius $\omega$ of
+% the task and solve it.
+
+% It seems safe to conjecture that an approach to communication that
+% seeks to increase the expected success rate of follow-up requests
+% would lead to less congested network traffic.
 
 \section{Contribution and Objectives}
 
-% present the main contribution of the research in a way that a
-% non-expert could clearly understand, then present the detailed
-% objectives of your research, highlighting why your work is novel in
-% comparison to existing research.
+\emph{TASK: present the main contribution of the research in a way
+that a non-expert could clearly understand, then present the detailed
+objectives of your research, highlighting why your work is novel in
+comparison to existing research.}
 
 \section{Methodology and Preliminary Results}
 
-% present the methodology of your approach, discussing why it is
-% suitable to your contribution, and also present any preliminary
-% results if you have them, including a statement about the current
-% status of your work.
+\emph{TASK: present the methodology of your approach, discussing why
+it is suitable to your contribution, and also present any preliminary
+results if you have them, including a statement about the current
+status of your work.}
 
 \section{Future and Research Plan}
 
-% summarise your intended future work and provide a schedule of
-% milestones with a discussion of their feasibility.
+\emph{TASK: summarise your intended future work and provide a schedule
+of milestones with a discussion of their feasibility.}
 
 \pagebreak
 ~
