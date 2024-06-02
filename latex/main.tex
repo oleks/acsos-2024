@@ -11,6 +11,8 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 
+\usepackage{subcaption}
+
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows.meta}
@@ -74,6 +76,13 @@ the programmer in taking this perspective, when programming multiple,
 adaptive, physically distributed agents, engaged in a common
 objective.
 
+The approach is to have agents communicate sentences in linear
+temporal logic (LTL) as to their projected behaviour going forth,
+depending on subsequent events. Events may be induced by changes in
+their environment, or messages from other agents. Armed with LTL
+sentences about the projected behaviour of other agents, and agent can
+employ a live synthesis technique in attempt to reach its objective.
+
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -117,6 +126,8 @@ out for help from other agents whenever they see a task.
 
 \begin{figure}
 \centering
+\begin{subfigure}{0.4\textwidth}
+\centering
 \begin{tikzpicture}
   \coordinate (a) at (0,0);
   \coordinate (b) at (0,2);
@@ -146,15 +157,63 @@ out for help from other agents whenever they see a task.
     ($(e)!0.4!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.4!(d)$);
 
 \end{tikzpicture}
-\caption{Sequence diagram illustrating Bob's calls out for
-\texttt{help}, as Alice moves closer to Bob, while Carol moves away.}
+\caption{Alice moves closer to Bob, while Carol moves away.}
+\label{fig1_1}
+\end{subfigure}
+
+\begin{subfigure}{0.4\textwidth}
+\centering
+\begin{tikzpicture}
+  \coordinate (a) at (0,0);
+  \coordinate (b) at (0,2);
+  \coordinate (c) at (2,0);
+  \coordinate (d) at (2,2);
+  \coordinate (e) at (4,0);
+  \coordinate (f) at (4,2);
+  \draw %
+    (a) -- (b)node[pos=1.1,scale=0.8]{Alice}%
+    (c) -- (d)node[pos=1.1,scale=0.8]{Bob}%
+    (e) -- (f)node[pos=1.1,scale=0.8]{Carol};
+  \draw[stealth-,shorten <=8mm] %
+    ($(a)!0.8!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.8!(d)$);
+  \draw[stealth-,shorten <=4mm] %
+    ($(a)!0.6!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.6!(d)$);
+  \draw[stealth-] %
+    ($(a)!0.4!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.4!(d)$);
+
+  \draw[-stealth] %
+    ($(a)!0.2!(b)$) -- node[above,near end,scale=0.6]{\texttt{omw}}($(c)!0.2!(d)$);
+
+  \draw[stealth-,shorten <=4mm] %
+    ($(e)!0.8!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.8!(d)$);
+  \draw[stealth-,shorten <=2mm] %
+    ($(e)!0.6!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.6!(d)$);
+  \draw[stealth-] %
+    ($(e)!0.4!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.4!(d)$);
+
+  \draw[-stealth] %
+    ($(e)!0.2!(f)$) -- node[above,near end,scale=0.6]{\texttt{omw}}($(c)!0.2!(d)$);
+
+\end{tikzpicture}
+\caption{Alice and Carol move towards Bob.}
+\label{fig1_2}
+\end{subfigure}
+\caption{Sequence diagrams of Bob's calls out for
 \label{fig1}
+\texttt{help}}
 \end{figure}
 
-Figure \ref{fig1} showcases 3 robots, Alice, Bob, and Carol, where Bob
-has found a task and calls out to Alice and Carol for help. As Alice
-and Carol also roam about the room, they may be out of reach for Bob's
-broadcasting signal.
+Figure \ref{fig1_1} illustrates the communication between 3 robots,
+Alice, Bob, and Carol, where Bob has found a task and calls out to
+Alice and Carol for \texttt{help}. As Alice and Carol roam about the
+room, they may be out of reach for Bob's broadcasting signal. Hence,
+Bob has to repeat the signal until eventually getting a response.
+
+Figure \ref{fig1_2} presents a slightly less happy path, where both
+Alice and Carol get within reach of Bob. In this scenario, Bob ought
+to abort the \texttt{help} request from either Alice or Carol.
+Choosing which request to cancel is best informed, if we have an
+indication of how quickly each would arrive.
 
 \section{Contribution and Objectives}
 
@@ -172,8 +231,36 @@ agent.
 
 To this end, both requests and responses may employ sentences in a
 linear temporal logic, a logic that deals with truth of propositions
-over time\cite{2022-Live-Synthesis}.
+over time\cite{1977-LTL}. Armed with such sentences for the
+surrounding agents, a given agent can synthesize a plan to proceed
+towards its objective at runtime\cite{2022-Live-Synthesis}.
 
+A \texttt{help} message from Bob ($B$) looks as follows:
+
+\begin{align}
+\mathtt{help}_B \cup %
+  \left( \bigvee_{i=1}^n %
+    \mathtt{omw}_i^B \cup %
+    \left(\mathtt{nearby}_i^B \wedge \mathtt{work}_i \wedge \mathtt{work}_B \right) %
+  \right) %
+\end{align}
+
+Meaning, Bob will be sending out \texttt{help} messages until one of
+the other agents responds back with a message \texttt{omw}, coupled
+with a promise that they will eventually get near to Bob, and do their
+part of the work. Bob also promises to do his part of the work, in the
+end.
+
+An initial \texttt{omw} response from Alice ($A$) may then look as
+follows:
+
+\begin{align}
+\mathtt{omw}^B_A \cup %
+  \left( \mathtt{nearby}_A^B \wedge \mathtt{work}_A \right)%
+\end{align}
+
+Meaning, Alice will be sending out \texttt{omw} messages until it
+eventually reaching Bob and doing her part of the work.
 
 % 2
 % vacuuming and 1 polishing robot roam a fixed-size room looking for
@@ -197,6 +284,12 @@ status of your work.}
 
 \emph{TASK: summarise your intended future work and provide a schedule
 of milestones with a discussion of their feasibility.}
+
+Implement a MAS programming environment, where (1) agents communicate
+with LTL sentences, embedded in both their requests and responses, (2)
+have their own goals specified as LTL sentences, and (3) each run an
+LTL-based synthesis procedure to iteratively arrive at the next step
+towards fulfilling their goal.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
