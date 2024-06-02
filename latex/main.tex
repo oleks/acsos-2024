@@ -9,6 +9,11 @@
 \usepackage{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
 \begin{document}
 
 \title{Adaptive Multi-Agent Programming with Programs and Promises
@@ -126,6 +131,26 @@ task. Tasks appear at random, in random positions, and neither move,
 nor disappear until solved. Agents have an omnidirectional field of
 sight with radius $\omega$, and can communicate by broadcasting
 messages within radius $\beta$, where $\beta>\omega$.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+  \coordinate (a) at (0,0);
+  \coordinate (b) at (0,3);
+  \coordinate (c) at (2,0);
+  \coordinate (d) at (2,3);
+  \coordinate (e) at (4,0);
+  \coordinate (f) at (4,3);
+  \draw %
+    (a) -- (b)node[pos=1.1,scale=0.8]{Alice}%
+    (c) -- (d)node[pos=1.1,scale=0.8]{Bob}%
+    (e) -- (f)node[pos=1.1,scale=0.8]{Carol};
+  \draw[stealth-] %
+    ($(a)!0.9!(b)$) -- node[above,midway,scale=0.6]{Help!}($(c)!0.9!(d)$);
+  %\draw[stealth-] %
+  %  ($(a)!0.8!(b)$) -- node[below,midway,scale=0.6]{Sorry} ($(c)!0.8!(d)$);
+\end{tikzpicture}
+\end{figure}
 
 % 2
 % vacuuming and 1 polishing robot roam a fixed-size room looking for
