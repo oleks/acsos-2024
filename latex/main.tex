@@ -13,6 +13,7 @@
 
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta}
 
 \begin{document}
 
@@ -105,6 +106,56 @@ little confidence that we can act on those changes in due time.
 % At the same time, agents in highly dynamic systems often cannot freeze
 % in anticipation of follow-up requests.
 
+As a particular example, consider the following multi-agent problem: 3
+robots roam a fixed-size room, looking for tasks to do. A task can be
+solved by 2 robots getting within radius $\omega$ of the task. Tasks
+appear at random, in random positions, and neither move, nor disappear
+until solved. Agents have an omnidirectional field of sight with
+radius $\omega$, and can communicate by broadcasting messages within
+radius $\beta$, where $\beta>\omega$. The robots roam around, calling
+out for help from other agents whenever they see a task.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+  \coordinate (a) at (0,0);
+  \coordinate (b) at (0,2);
+  \coordinate (c) at (2,0);
+  \coordinate (d) at (2,2);
+  \coordinate (e) at (4,0);
+  \coordinate (f) at (4,2);
+  \draw %
+    (a) -- (b)node[pos=1.1,scale=0.8]{Alice}%
+    (c) -- (d)node[pos=1.1,scale=0.8]{Bob}%
+    (e) -- (f)node[pos=1.1,scale=0.8]{Carol};
+  \draw[stealth-,shorten <=8mm] %
+    ($(a)!0.8!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.8!(d)$);
+  \draw[stealth-,shorten <=5mm] %
+    ($(a)!0.6!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.6!(d)$);
+  \draw[stealth-] %
+    ($(a)!0.4!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.4!(d)$);
+
+  \draw[-stealth] %
+    ($(a)!0.2!(b)$) -- node[above,near end,scale=0.6]{\texttt{omw}}($(c)!0.2!(d)$);
+
+  \draw[stealth-,shorten <=2mm] %
+    ($(e)!0.8!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.8!(d)$);
+  \draw[stealth-,shorten <=6mm] %
+    ($(e)!0.6!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.6!(d)$);
+  \draw[stealth-,shorten <=8mm] %
+    ($(e)!0.4!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.4!(d)$);
+
+\end{tikzpicture}
+\caption{Sequence diagram illustrating Bob's calls out for
+\texttt{help}, as Alice moves closer to Bob, while Carol moves away.}
+\label{fig1}
+\end{figure}
+
+Figure \ref{fig1} showcases 3 robots, Alice, Bob, and Carol, where Bob
+has found a task and calls out to Alice and Carol for help. As Alice
+and Carol also roam about the room, they may be out of reach for Bob's
+broadcasting signal.
+
 \section{Contribution and Objectives}
 
 \emph{TASK: present the main contribution of the research in a way
@@ -112,45 +163,17 @@ that a non-expert could clearly understand, then present the detailed
 objectives of your research, highlighting why your work is novel in
 comparison to existing research.}
 
-Instead, we may try to expand the relevance horizon of our messages.
-This may entail: (1) constructing responses such that they give an
-indication of not just the current state of an agent, but also its
-possible future states, and/or (2) composing follow-up requests such
-that they can be serviced successfully, despite possible meanwhile
-state changes at the remote agent.
+To expand the relevance horizon of our messages, consider: (1)
+constructing responses such that they give an indication of not just
+the current state of an agent, but also its possible future states,
+and/or (2) composing follow-up requests such that they can be serviced
+successfully, despite possible meanwhile state changes at the remote
+agent.
 
 To this end, both requests and responses may employ sentences in a
 linear temporal logic, a logic that deals with truth of propositions
 over time\cite{2022-Live-Synthesis}.
 
-
-As a particular example, consider the following multi-agent problem: 3
-robots roam a fixed-size room, looking for tasks to do. A task can be
-solved by at least 2 robots getting within radius $\omega$ of the
-task. Tasks appear at random, in random positions, and neither move,
-nor disappear until solved. Agents have an omnidirectional field of
-sight with radius $\omega$, and can communicate by broadcasting
-messages within radius $\beta$, where $\beta>\omega$.
-
-\begin{figure}
-\centering
-\begin{tikzpicture}
-  \coordinate (a) at (0,0);
-  \coordinate (b) at (0,3);
-  \coordinate (c) at (2,0);
-  \coordinate (d) at (2,3);
-  \coordinate (e) at (4,0);
-  \coordinate (f) at (4,3);
-  \draw %
-    (a) -- (b)node[pos=1.1,scale=0.8]{Alice}%
-    (c) -- (d)node[pos=1.1,scale=0.8]{Bob}%
-    (e) -- (f)node[pos=1.1,scale=0.8]{Carol};
-  \draw[stealth-] %
-    ($(a)!0.9!(b)$) -- node[above,midway,scale=0.6]{Help!}($(c)!0.9!(d)$);
-  %\draw[stealth-] %
-  %  ($(a)!0.8!(b)$) -- node[below,midway,scale=0.6]{Sorry} ($(c)!0.8!(d)$);
-\end{tikzpicture}
-\end{figure}
 
 % 2
 % vacuuming and 1 polishing robot roam a fixed-size room looking for
