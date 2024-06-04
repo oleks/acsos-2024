@@ -215,13 +215,6 @@ to abort the \texttt{help} request from either Alice or Carol.
 Choosing which request to cancel is best informed, if we have an
 indication of how quickly each would arrive.
 
-\section{Contribution and Objectives}
-
-\emph{TASK: present the main contribution of the research in a way
-that a non-expert could clearly understand, then present the detailed
-objectives of your research, highlighting why your work is novel in
-comparison to existing research.}
-
 To expand the relevance horizon of our messages, consider: (1)
 constructing responses such that they give an indication of not just
 the current state of an agent, but also its possible future states,
@@ -235,9 +228,31 @@ time\cite{1977-Temporal-Logic}. Temporal logics have often been used
 as specification languages for concurrent systems, used for model
 checking and
 synthesis\cite{2021-Specification-Patterns-for-Robotic-Missions}.
-Armed with such sentences for the surrounding agents, a given agent
-can synthesize a plan to proceed towards its objective at
-runtime\cite{2022-Live-Synthesis}.
+
+However, previous work has mainly focused on global, or decentralized,
+but fixed temporal logic specifications. Although some work exists on
+supporting changing specifications at
+runtime\cite{2022-Live-Synthesis}, existing work falls short of
+considering temporal logic sentences as the language of message
+exchange between agents, and full-blown runtime synthesis on the basis
+of the exchange of such messages.
+
+Possibly relevant: existing work shows that techniques from runtime
+verification can simplify otherwise complex static synthesis
+tasks\cite{2022-Runtime-Verification-Meets-Controller-Synthesis},
+
+
+\section{Contribution and Objectives}
+
+\emph{TASK: present the main contribution of the research in a way
+that a non-expert could clearly understand, then present the detailed
+objectives of your research, highlighting why your work is novel in
+comparison to existing research.}
+
+
+%Armed with such sentences for the surrounding agents, a given agent
+%can synthesize a plan to proceed towards its objective at
+%runtime\cite{2022-Live-Synthesis}.
 
 A \texttt{help} message from Bob ($B$) looks as follows:
 
