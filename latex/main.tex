@@ -258,9 +258,9 @@ comparison to existing research.}
 A \texttt{help} message from Bob ($B$) looks as follows:
 
 \begin{align}
-\mathtt{help}_B \cup %
+\mathtt{help}_B \mathrel{\mathcal{U}} %
   \left( \bigvee_{i=1}^n %
-    \mathtt{omw}_i^B \cup %
+    \mathtt{omw}_i^B \mathrel{\mathcal{U}} %
     \left(\mathtt{nearby}_i^B \wedge \mathtt{work}_i \wedge \mathtt{work}_B \right) %
   \right) %
 \end{align}
@@ -275,7 +275,7 @@ An initial \texttt{omw} response from Alice ($A$) may then look as
 follows:
 
 \begin{align}
-\mathtt{omw}^B_A \cup %
+\mathtt{omw}^B_A \mathrel{\mathcal{U}} %
   \left( \mathtt{nearby}_A^B \wedge \mathtt{work}_A \right)%
 \end{align}
 
