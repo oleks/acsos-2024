@@ -127,6 +127,12 @@ radius $\omega$, and can communicate by broadcasting messages within
 radius $\beta$, where $\beta>\omega$. The robots roam around, calling
 out for help from other agents whenever they see a task.
 
+\tikzset{
+  unsuccessful/.style={
+    draw=gray,dashed
+  }
+}
+
 \begin{figure}
 \centering
 \begin{subfigure}{0.4\textwidth}
@@ -142,9 +148,9 @@ out for help from other agents whenever they see a task.
     (a) -- (b)node[pos=1.1,scale=0.8]{Alice}%
     (c) -- (d)node[pos=1.1,scale=0.8]{Bob}%
     (e) -- (f)node[pos=1.1,scale=0.8]{Carol};
-  \draw[stealth-,shorten <=8mm] %
+  \draw[stealth-,shorten <=8mm,unsuccessful] %
     ($(a)!0.8!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.8!(d)$);
-  \draw[stealth-,shorten <=5mm] %
+  \draw[stealth-,shorten <=5mm,unsuccessful] %
     ($(a)!0.6!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.6!(d)$);
   \draw[stealth-] %
     ($(a)!0.4!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.4!(d)$);
@@ -152,11 +158,11 @@ out for help from other agents whenever they see a task.
   \draw[-stealth] %
     ($(a)!0.2!(b)$) -- node[above,near end,scale=0.6]{\texttt{omw}}($(c)!0.2!(d)$);
 
-  \draw[stealth-,shorten <=2mm] %
+  \draw[stealth-,shorten <=2mm,unsuccessful] %
     ($(e)!0.8!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.8!(d)$);
-  \draw[stealth-,shorten <=6mm] %
+  \draw[stealth-,shorten <=6mm,unsuccessful] %
     ($(e)!0.6!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.6!(d)$);
-  \draw[stealth-,shorten <=8mm] %
+  \draw[stealth-,shorten <=8mm,unsuccessful] %
     ($(e)!0.4!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.4!(d)$);
 
 \end{tikzpicture}
@@ -177,9 +183,9 @@ out for help from other agents whenever they see a task.
     (a) -- (b)node[pos=1.1,scale=0.8]{Alice}%
     (c) -- (d)node[pos=1.1,scale=0.8]{Bob}%
     (e) -- (f)node[pos=1.1,scale=0.8]{Carol};
-  \draw[stealth-,shorten <=8mm] %
+  \draw[stealth-,shorten <=8mm,unsuccessful] %
     ($(a)!0.8!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.8!(d)$);
-  \draw[stealth-,shorten <=4mm] %
+  \draw[stealth-,shorten <=4mm,unsuccessful] %
     ($(a)!0.6!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.6!(d)$);
   \draw[stealth-] %
     ($(a)!0.4!(b)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.4!(d)$);
@@ -187,9 +193,9 @@ out for help from other agents whenever they see a task.
   \draw[-stealth] %
     ($(a)!0.2!(b)$) -- node[above,near end,scale=0.6]{\texttt{omw}}($(c)!0.2!(d)$);
 
-  \draw[stealth-,shorten <=4mm] %
+  \draw[stealth-,shorten <=4mm,unsuccessful] %
     ($(e)!0.8!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.8!(d)$);
-  \draw[stealth-,shorten <=2mm] %
+  \draw[stealth-,shorten <=2mm,unsuccessful] %
     ($(e)!0.6!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.6!(d)$);
   \draw[stealth-] %
     ($(e)!0.4!(f)$) -- node[above,near end,scale=0.6]{\texttt{help}}($(c)!0.4!(d)$);
