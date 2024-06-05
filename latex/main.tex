@@ -17,6 +17,9 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows.meta}
 
+\usepackage{math}
+\usepackage{temporal}
+
 \begin{document}
 
 \title{Adaptive Multi-Agent Programming with Programs and Promises
@@ -258,11 +261,11 @@ comparison to existing research.}
 A \texttt{help} message from Bob ($B$) looks as follows:
 
 \begin{align}
-\mathtt{help}_B \mathrel{\mathcal{U}} %
-  \left( \bigvee_{i=1}^n %
-    \mathtt{omw}_i^B \mathrel{\mathcal{U}} %
-    \left(\mathtt{nearby}_i^B \wedge \mathtt{work}_i \wedge \mathtt{work}_B \right) %
-  \right) %
+\mathtt{help}_B \until %
+\p{\bigvee_{i=1}^n %
+  \mathtt{omw}_i^B \until %
+  \p{\mathtt{nearby}_i^B \wedge \mathtt{work}_i \wedge \mathtt{work}_B} %
+} %
 \end{align}
 
 Meaning, Bob will be sending out \texttt{help} messages until one of
@@ -275,8 +278,8 @@ An initial \texttt{omw} response from Alice ($A$) may then look as
 follows:
 
 \begin{align}
-\mathtt{omw}^B_A \mathrel{\mathcal{U}} %
-  \left( \mathtt{nearby}_A^B \wedge \mathtt{work}_A \right)%
+\mathtt{omw}^B_A \until %
+  \p{\mathtt{nearby}_A^B \wedge \mathtt{work}_A}%
 \end{align}
 
 Meaning, Alice will be sending out \texttt{omw} messages until it
