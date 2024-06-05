@@ -98,34 +98,38 @@ adaptive, multi-agent, distributed, programming, linear temporal logic
 key research question(s) and challenges that have yet to be addressed
 by the community - including limitations of current approaches.}
 
-Contemporary distributed systems communication primitives tend to deal
-in short-term planning horizons. For instance, while an inquiry about
-the state of an agent may resolve to a particular response, its state
-may be subject to fast-paced change, when compared with the time it
-takes to communicate across the network. This renders the response
-relevant only for a short period of time, if at all, when delivered.
-Follow-up requests will be relevant for an even shorter period of
-time.
+% Contemporary distributed systems communication primitives tend to
+% deal in short-term planning horizons. For instance, while an inquiry
+% about the state of an agent may resolve to a particular response,
+% its state may be subject to fast-paced change, when compared with
+% the time it takes to communicate across the network. This renders
+% the response relevant only for a short period of time, if at all,
+% when delivered.  Follow-up requests will be relevant for an even
+% shorter period of time.
 
-Uncontested this leads to either high failure rates of follow-up
-requests, or highly congested networks. In particular, the state of a
-remote agent may be ill-predictable, while short-sighted status
-messages have little positive impact on the expected success rate of
-follow-up messages. Hence, we may choose to flood the network in
-attempt to keep track of the fast-paced changes, while still gaining
-little confidence that we can act on those changes in due time.
+% Uncontested this leads to either high failure rates of follow-up
+% requests, or highly congested networks. In particular, the state of
+% a remote agent may be ill-predictable, while short-sighted status
+% messages have little positive impact on the expected success rate of
+% follow-up messages. Hence, we may choose to flood the network in
+% attempt to keep track of the fast-paced changes, while still gaining
+% little confidence that we can act on those changes in due time.
 
-% At the same time, agents in highly dynamic systems often cannot freeze
-% in anticipation of follow-up requests.
+%% At the same time, agents in highly dynamic systems often cannot freeze
+%% in anticipation of follow-up requests.
 
-As a particular example, consider the following multi-agent problem: 3
-robots roam a fixed-size room, looking for tasks to do. A task can be
-solved by 2 robots getting within radius $\omega$ of the task. Tasks
-appear at random, in random positions, and neither move, nor disappear
-until solved. Agents have an omnidirectional field of sight with
-radius $\omega$, and can communicate by broadcasting messages within
-radius $\beta$, where $\beta>\omega$. The robots roam around, calling
-out for help from other agents whenever they see a task.
+% As a particular example
+
+Consider the following multi-agent problem: 3 robots roam a fixed-size
+room, looking for tasks to do. A task can be solved by 2 robots
+getting within radius $\omega$ of the task. Tasks appear at random, in
+random positions, and neither move, nor disappear until solved. Agents
+have an omnidirectional field of sight with radius $\omega$, and can
+communicate by broadcasting messages within radius $\beta$, where
+$\beta>\omega$. The robots roam around, looking for tasks to do. When
+a robot spots a task, it stops and calls out for help.
+
+% calling out for help from other agents whenever they see a task.
 
 \tikzset{
   unsuccessful/.style={
