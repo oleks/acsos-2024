@@ -1,16 +1,33 @@
-@article{BURDALO2018130,
-title = {The Information Flow Problem in multi-agent systems},
-journal = {Engineering Applications of Artificial Intelligence},
-volume = {70},
-pages = {130-141},
-year = {2018},
-issn = {0952-1976},
-doi = {https://doi.org/10.1016/j.engappai.2018.01.011},
-url = {https://www.sciencedirect.com/science/article/pii/S0952197618300198},
-author = {Luis Búrdalo and Andrés Terrasa and Vicente Julián and Ana García-Fornes},
-keywords = {Multi-agent systems, Communication strategies, Agent communication, Information exchange},
-abstract = {One of the problems related to the multi-agent systems area is the adequate exchange of information within the system. This problem is not only related to the availability of highly efficient and sophisticated message-passing mechanisms, which are in fact provided with by current multi-agent platforms, but also to the election of an appropriate communication strategy, which may also greatly influence the ability of the system to cope with the exchange of large amounts of data. Ideally, the communication strategy should be compatible with how the information flows in the system, that is, how agents share their knowledge with each other in order to fulfill the system-level goals. In this way, MAS designers must deal with the problem of analyzing the multi-agent system with respect the communication strategy that best suits the way the information flows in that particular system. This paper presents a formalization of this problem, which has been coined as the Information Flow Problem, and also presents a complete case study with an empirical evaluation involving four well-known communication strategies and eight typical multi-agent systems.}
+@article{BLOEM2012911,
+title = {Synthesis of Reactive(1) designs},
+journal = {Journal of Computer and System Sciences},
+volume = {78},
+number = {3},
+pages = {911-938},
+year = {2012},
+note = {In Commemoration of Amir Pnueli},
+issn = {0022-0000},
+doi = {https://doi.org/10.1016/j.jcss.2011.08.007},
+url = {https://www.sciencedirect.com/science/article/pii/S0022000011000869},
+author = {Roderick Bloem and Barbara Jobstmann and Nir Piterman and Amir Pnueli and Yaniv Saʼar},
+keywords = {Property synthesis, Realizability, Game theory},
+abstract = {We address the problem of automatically synthesizing digital designs from linear-time specifications. We consider various classes of specifications that can be synthesized with effort quadratic in the number of states of the reactive system, where we measure effort in symbolic steps. The synthesis algorithm is based on a novel type of game called General Reactivity of rank 1 (gr(1)), with a winning condition of the form(□ ◊p1∧⋯∧□ ◊pm)→(□ ◊q1∧⋯∧□ ◊qn), where each pi and qi is a Boolean combination of atomic propositions. We show symbolic algorithms to solve this game, to build a winning strategy and several ways to optimize the winning strategy and to extract a system from it. We also show how to use gr(1) games to solve the synthesis of ltl specifications in many interesting cases. As empirical evidence to the generality and efficiency of our approach we include a significant case study. We describe the formal specifications and the synthesis process applied to a bus arbiter, which is a realistic industrial hardware specification of modest size.}
+}@InProceedings{2022-Runtime-Verification-Meets-Controller-Synthesis,
+author="Azzopardi, Shaun
+and Piterman, Nir
+and Schneider, Gerardo",
+editor="Margaria, Tiziana
+and Steffen, Bernhard",
+title="Runtime Verification Meets Controller Synthesis",
+booktitle="Leveraging Applications of Formal Methods, Verification and Validation. Verification Principles",
+year="2022",
+publisher="Springer International Publishing",
+address="Cham",
+pages="382--396",
+abstract="Reactive synthesis guarantees correct-by-construction controllers from logical specifications, but is costly---2EXPTIME-complete in the size of the specification. In a practical setting, the desired controllers need to interact with an environment, but the more precise the model of the environment used for synthesis, the greater the cost of synthesis. This can be avoided by using suitable abstractions of the environment, but this in turn requires appropriate techniques to mediate between controllers and the real environment. Runtime verification can help here, with monitors acting as these mediators, and even as activators or orchestrators of the desired controllers. In this paper we survey literature for combinations of monitors with controller synthesis, and consider other potential combinations as future research directions.",
+isbn="978-3-031-19849-6"
 }
+
 @INPROCEEDINGS{1977-Temporal-Logic,
   author={Pnueli, Amir},
   booktitle={18th Annual Symposium on Foundations of Computer Science (sfcs 1977)},
@@ -21,6 +38,95 @@ abstract = {One of the problems related to the multi-agent systems area is the a
   pages={46--57},
   keywords={Logic;Operating systems;Real time systems;Reasoning about programs;Stress;Power system modeling;Clocks;Programming profession;Safety;System recovery},
   doi={10.1109/SFCS.1977.32}
+}
+@InProceedings{2006-Synthesis-of-Reactive-1-Designs,
+author="Piterman, Nir
+and Pnueli, Amir
+and Sa'ar, Yaniv",
+editor="Emerson, E. Allen
+and Namjoshi, Kedar S.",
+title="Synthesis of Reactive(1) Designs",
+booktitle="Verification, Model Checking, and Abstract Interpretation",
+year="2006",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="364--380",
+abstract="We consider the problem of synthesizing digital designs from their ltl specification. In spite of the theoretical double exponential lower bound for the general case, we show that for many expressive specifications of hardware designs the problem can be solved in time N3, where N is the size of the state space of the design. We describe the context of the problem, as part of the Prosyd European Project which aims to provide a property-based development flow for hardware designs. Within this project, synthesis plays an important role, first in order to check whether a given specification is realizable, and then for synthesizing part of the developed system.",
+isbn="978-3-540-31622-0"
+}
+
+@INPROCEEDINGS{2023-ACSOS-FRASP,
+  author={Casadei, Roberto and Dente, Francesco and Aguzzi, Gianluca and Pianini, Danilo and Viroli, Mirko},
+  booktitle={2023 IEEE International Conference on Autonomic Computing and Self-Organizing Systems (ACSOS)}, 
+  title={Self-Organisation Programming: A Functional Reactive Macro Approach}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={87-96},
+  keywords={Processor scheduling;Computational modeling;Aggregates;Wearable computers;Sodium;Programming;Robot sensing systems;self-organising systems;self-organisation programming;multi-agent systems;emergent behaviour;emergence steering;functional reactive programming;aggregate computing},
+  doi={10.1109/ACSOS58161.2023.00026}
+}
+@inproceedings{2020-Just-In-Time-Reactive-Synthesis,
+author = {Maoz, Shahar and Shevrin, Ilia},
+title = {Just-in-time reactive synthesis},
+year = {2021},
+isbn = {9781450367684},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3324884.3416557},
+doi = {10.1145/3324884.3416557},
+abstract = {Reactive synthesis is an automated procedure to obtain a correct-by-construction reactive system from its temporal logic specification. GR(1) is an expressive assume-guarantee fragment of LTL that enables efficient synthesis and has been recently used in different contexts and application domains.In this work we present just-in-time synthesis (JITS) for GR(1), a novel means to execute synthesized reactive systems. Rather than constructing a controller at synthesis time, we compute next states during system execution, and only when they are required. We prove that JITS does not compromise the correctness of the synthesized system execution. We further show that the basic algorithm can be extended to enable several variants.We have implemented JITS in the Spectra synthesizer. Our evaluation, comparing JITS to existing tools over known benchmark specifications, shows that JITS reduces (1) total synthesis time, (2) the size of the synthesis output, and (3) the loading time for system execution, all while having little to no effect on system execution performance.},
+booktitle = {Proceedings of the 35th IEEE/ACM International Conference on Automated Software Engineering},
+pages = {635–646},
+numpages = {12},
+keywords = {GR(1), reactive synthesis},
+location = {Virtual Event, Australia},
+series = {ASE '20}
+}
+@Article{2021-Spectra,
+author={Maoz, Shahar
+and Ringert, Jan Oliver},
+title={Spectra: a specification language for reactive systems},
+journal={Software and Systems Modeling},
+year={2021},
+month={Oct},
+day={01},
+volume={20},
+number={5},
+pages={1553-1586},
+abstract={We introduce Spectra, a new specification language for reactive systems, specifically tailored for the context of reactive synthesis. The meaning of Spectra is defined by a translation to a kernel language. Spectra comes with the Spectra Tools, a set of analyses, including a synthesizer to obtain a correct-by-construction implementation, several means for executing the resulting controller, and additional analyses aimed at helping engineers write higher-quality specifications. We present the language in detail and give an overview of its tool set. Together with the language and its tool set, we present four collections of many, non-trivial, large specifications, written by undergraduate computer science students for the development of autonomous Lego robots and additional example reactive systems. The collected specifications can serve as benchmarks for future studies on reactive synthesis. We present the specifications, with observations and lessons learned about the potential use of reactive synthesis by software engineers.},
+issn={1619-1374},
+doi={10.1007/s10270-021-00868-z},
+url={https://doi.org/10.1007/s10270-021-00868-z}
+}
+@inproceedings{10.1145/3196558.3196561,
+author = {Maoz, Shahar and Ringert, Jan Oliver},
+title = {On the software engineering challenges of applying reactive synthesis to robotics},
+year = {2018},
+isbn = {9781450357609},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3196558.3196561},
+doi = {10.1145/3196558.3196561},
+abstract = {Reactive synthesis is an automated procedure to obtain a correct-by-construction reactive system from its temporal logic specification. This short paper discusses the software engineering challenges in applying reactive synthesis to robotics, beyond the synthesis algorithms themselves, including the challenge of writing declarative specifications, the challenge of abstraction of data and time, and the challenge of availability of an adequate development process supported by related tools. The identification and description of the challenges are based on our experience in building a development environment for reactive synthesis and applying it to the construction of about 10 different autonomous Lego robots. We describe the challenges using concrete examples from one of the robots built in our lab.},
+booktitle = {Proceedings of the 1st International Workshop on Robotics Software Engineering},
+pages = {17–22},
+numpages = {6},
+keywords = {reactive synthesis, GR(1)},
+location = {Gothenburg, Sweden},
+series = {RoSE '18}
+}@article{2016-Multi-Agent-Planning-under-Local-LTL-Specs-and-Event-Based-Sync,
+title = {Multi-agent planning under local LTL specifications and event-based synchronization},
+journal = {Automatica},
+volume = {70},
+pages = {239-248},
+year = {2016},
+issn = {0005-1098},
+doi = {https://doi.org/10.1016/j.automatica.2016.04.006},
+url = {https://www.sciencedirect.com/science/article/pii/S0005109816301285},
+author = {Jana Tumova and Dimos V. Dimarogonas},
+keywords = {Temporal logic, Finite state machines, Formal verification, Path planning, Synchronization, Decentralized control, Robot control},
+abstract = {We study the problem of plan synthesis for multi-agent systems, to achieve complex, high-level, long-term goals that are assigned to each agent individually. As the agents might not be capable of satisfying their respective goals by themselves, requests for other agents’ collaborations are a part of the task descriptions. We consider that each agent is modeled as a discrete state-transition system and its task specification takes a form of a linear temporal logic formula. A traditional automata-based approach to multi-agent plan synthesis from such specifications builds on centralized team planning and full team synchronization after each agents’ discrete step, and thus suffers from extreme computational demands. We aim at reducing the computational complexity by decomposing the plan synthesis problem into finite horizon planning problems that are solved iteratively, upon the run of the agents. We introduce an event-based synchronization that allows our approach to efficiently adapt to different time durations of different agents’ discrete steps. We discuss the correctness of the solution and find assumptions, under which the proposed iterative algorithm leads to provable eventual satisfaction of the desired specifications.}
 }
 @Article{2022-Live-Synthesis,
 author={Finkbeiner, Bernd
@@ -38,6 +144,17 @@ abstract={Synthesis automatically constructs an implementation that satisfies a 
 issn={1614-5054},
 doi={10.1007/s11334-022-00447-5},
 url={https://doi.org/10.1007/s11334-022-00447-5}
+}
+@ARTICLE{2021-Specification-Patterns-for-Robotic-Missions,
+  author={Menghi, Claudio and Tsigkanos, Christos and Pelliccione, Patrizio and Ghezzi, Carlo and Berger, Thorsten},
+  journal={IEEE Transactions on Software Engineering},
+  title={Specification Patterns for Robotic Missions},
+  year={2021},
+  volume={47},
+  number={10},
+  pages={2208-2224},
+  keywords={Software;Service robots;Natural languages;Software engineering;Tools;Task analysis;Mission specification;pattern catalog;robotic mission;model driven engineering},
+  doi={10.1109/TSE.2019.2945329}
 }
 @article{10.1145/2491465.2491466,
 author = {Salvaneschi, Guido and Ghezzi, Carlo and Pradella, Matteo},
@@ -58,57 +175,36 @@ articleno = {7},
 numpages = {29},
 keywords = {self-adaptive software, context-oriented programming, autonomic computing, Context}
 }
-@INPROCEEDINGS{2023-ACSOS-FRASP,
-  author={Casadei, Roberto and Dente, Francesco and Aguzzi, Gianluca and Pianini, Danilo and Viroli, Mirko},
-  booktitle={2023 IEEE International Conference on Autonomic Computing and Self-Organizing Systems (ACSOS)}, 
-  title={Self-Organisation Programming: A Functional Reactive Macro Approach}, 
-  year={2023},
-  volume={},
-  number={},
-  pages={87-96},
-  keywords={Processor scheduling;Computational modeling;Aggregates;Wearable computers;Sodium;Programming;Robot sensing systems;self-organising systems;self-organisation programming;multi-agent systems;emergent behaviour;emergence steering;functional reactive programming;aggregate computing},
-  doi={10.1109/ACSOS58161.2023.00026}
-}
-@article{2016-Multi-Agent-Planning-under-Local-LTL-Specs-and-Event-Based-Sync,
-title = {Multi-agent planning under local LTL specifications and event-based synchronization},
-journal = {Automatica},
-volume = {70},
-pages = {239-248},
-year = {2016},
-issn = {0005-1098},
-doi = {https://doi.org/10.1016/j.automatica.2016.04.006},
-url = {https://www.sciencedirect.com/science/article/pii/S0005109816301285},
-author = {Jana Tumova and Dimos V. Dimarogonas},
-keywords = {Temporal logic, Finite state machines, Formal verification, Path planning, Synchronization, Decentralized control, Robot control},
-abstract = {We study the problem of plan synthesis for multi-agent systems, to achieve complex, high-level, long-term goals that are assigned to each agent individually. As the agents might not be capable of satisfying their respective goals by themselves, requests for other agents’ collaborations are a part of the task descriptions. We consider that each agent is modeled as a discrete state-transition system and its task specification takes a form of a linear temporal logic formula. A traditional automata-based approach to multi-agent plan synthesis from such specifications builds on centralized team planning and full team synchronization after each agents’ discrete step, and thus suffers from extreme computational demands. We aim at reducing the computational complexity by decomposing the plan synthesis problem into finite horizon planning problems that are solved iteratively, upon the run of the agents. We introduce an event-based synchronization that allows our approach to efficiently adapt to different time durations of different agents’ discrete steps. We discuss the correctness of the solution and find assumptions, under which the proposed iterative algorithm leads to provable eventual satisfaction of the desired specifications.}
-}
-@ARTICLE{2021-Specification-Patterns-for-Robotic-Missions,
-  author={Menghi, Claudio and Tsigkanos, Christos and Pelliccione, Patrizio and Ghezzi, Carlo and Berger, Thorsten},
-  journal={IEEE Transactions on Software Engineering},
-  title={Specification Patterns for Robotic Missions},
-  year={2021},
-  volume={47},
-  number={10},
-  pages={2208-2224},
-  keywords={Software;Service robots;Natural languages;Software engineering;Tools;Task analysis;Mission specification;pattern catalog;robotic mission;model driven engineering},
-  doi={10.1109/TSE.2019.2945329}
-}
-@InProceedings{2022-Runtime-Verification-Meets-Controller-Synthesis,
-author="Azzopardi, Shaun
-and Piterman, Nir
-and Schneider, Gerardo",
-editor="Margaria, Tiziana
-and Steffen, Bernhard",
-title="Runtime Verification Meets Controller Synthesis",
-booktitle="Leveraging Applications of Formal Methods, Verification and Validation. Verification Principles",
-year="2022",
-publisher="Springer International Publishing",
-address="Cham",
-pages="382--396",
-abstract="Reactive synthesis guarantees correct-by-construction controllers from logical specifications, but is costly---2EXPTIME-complete in the size of the specification. In a practical setting, the desired controllers need to interact with an environment, but the more precise the model of the environment used for synthesis, the greater the cost of synthesis. This can be avoided by using suitable abstractions of the environment, but this in turn requires appropriate techniques to mediate between controllers and the real environment. Runtime verification can help here, with monitors acting as these mediators, and even as activators or orchestrators of the desired controllers. In this paper we survey literature for combinations of monitors with controller synthesis, and consider other potential combinations as future research directions.",
-isbn="978-3-031-19849-6"
+@InProceedings{1985-Reactive-Systems,
+author="Harel, D.
+and Pnueli, A.",
+editor="Apt, Krzysztof R.",
+title="On the Development of Reactive Systems",
+booktitle="Logics and Models of Concurrent Systems",
+year="1985",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="477--498",
+abstract="Some observations are made concerning the process of developing complex systems. A broad class of systems, termed reactive, is singled out as being particularly problematic when it comes to finding satisfactory methods for behavioral description. In this paper we recommend the recently proposed statechart method for this purpose. Moreover, it is observed that most reactive systems cannot be developed in a linear stepwise fashion, but, rather, give rise to a two-dimensional development process, featuring behavioral aspects in the one dimension and implementational ones in the other. Concurrency may occur in both dimensions, as orthogonality of states in the one and as parallelism of subsystems in the other. A preliminary approach to working one's way through this ``magic square'' of system development is then presented. The ideas described herein seem to be relevant to a wide variety of application areas.",
+isbn="978-3-642-82453-1"
 }
 
+@inproceedings{1989-POPL-Pnueli-Rosner,
+author = {Pnueli, A. and Rosner, R.},
+title = {On the synthesis of a reactive module},
+year = {1989},
+isbn = {0897912942},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/75277.75293},
+doi = {10.1145/75277.75293},
+abstract = {We consider the synthesis of a reactive module with input x and output y, which is specified by the linear temporal formula @@@@(x, y). We show that there exists a program satisfying @@@@ iff the branching time formula (∀x) (∃y) A@@@@(x, y) is valid over all tree models. For the restricted case that all variables range over finite domains, the validity problem is decidable, and we present an algorithm for constructing the program whenever it exists. The algorithm is based on a new procedure for checking the emptiness of Rabin automata on infinite trees in time exponential in the number of pairs, but only polynomial in the number of states. This leads to a synthesis algorithm whose complexity is double exponential in the length of the given specification.},
+booktitle = {Proceedings of the 16th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+pages = {179–190},
+numpages = {12},
+location = {Austin, Texas, USA},
+series = {POPL '89}
+}
 @INPROCEEDINGS{2023-ACSOS-CoADAPT,
   author={Dragan, Paul-Andrei and Metzger, Andreas and Pohl, Klaus},
   booktitle={2023 IEEE International Conference on Autonomic Computing and Self-Organizing Systems (ACSOS)}, 
@@ -139,3 +235,16 @@ abstract="Robot applications are increasingly based on teams of robots that coll
 isbn="978-3-319-95582-7"
 }
 
+@article{BURDALO2018130,
+title = {The Information Flow Problem in multi-agent systems},
+journal = {Engineering Applications of Artificial Intelligence},
+volume = {70},
+pages = {130-141},
+year = {2018},
+issn = {0952-1976},
+doi = {https://doi.org/10.1016/j.engappai.2018.01.011},
+url = {https://www.sciencedirect.com/science/article/pii/S0952197618300198},
+author = {Luis Búrdalo and Andrés Terrasa and Vicente Julián and Ana García-Fornes},
+keywords = {Multi-agent systems, Communication strategies, Agent communication, Information exchange},
+abstract = {One of the problems related to the multi-agent systems area is the adequate exchange of information within the system. This problem is not only related to the availability of highly efficient and sophisticated message-passing mechanisms, which are in fact provided with by current multi-agent platforms, but also to the election of an appropriate communication strategy, which may also greatly influence the ability of the system to cope with the exchange of large amounts of data. Ideally, the communication strategy should be compatible with how the information flows in the system, that is, how agents share their knowledge with each other in order to fulfill the system-level goals. In this way, MAS designers must deal with the problem of analyzing the multi-agent system with respect the communication strategy that best suits the way the information flows in that particular system. This paper presents a formalization of this problem, which has been coined as the Information Flow Problem, and also presents a complete case study with an empirical evaluation involving four well-known communication strategies and eight typical multi-agent systems.}
+}
